@@ -52,11 +52,13 @@ WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
     'atom': fa.icons['code'],
     'banshee': fa.icons['play'],
+    'battle.net.exe': fa.icons['windows'],
     'blender': fa.icons['cube'],
     'chromium': fa.icons['chrome'],
     'cura': fa.icons['cube'],
+    'code-oss': fa.icons['code'],
     'darktable': fa.icons['image'],
-    'discord': fa.icons['comment'],
+    'discord': fa.icons['discord'],
     'eclipse': fa.icons['code'],
     'emacs': fa.icons['code'],
     'eog': fa.icons['image'],
@@ -72,6 +74,7 @@ WINDOW_ICONS = {
     'gnome-terminal-server': fa.icons['terminal'],
     'google-chrome': fa.icons['chrome'],
     'gpick': fa.icons['eye-dropper'],
+    'gucharmap': '',
     'imv': fa.icons['image'],
     'java': fa.icons['code'],
     'jetbrains-idea': fa.icons['code'],
@@ -103,6 +106,9 @@ WINDOW_ICONS = {
     'thunderbird': fa.icons['envelope'],
     'totem': fa.icons['play'],
     'urxvt': fa.icons['terminal'],
+    'wow.exe': fa.icons['windows'],
+    'wowman-main': fa.icons['java'],
+    'Wine': fa.icons['windows'],
     'xfce4-terminal': fa.icons['terminal'],
     'xournal': fa.icons['file-alt'],
     'yelp': fa.icons['code'],
@@ -131,6 +137,7 @@ def icon_for_window(window):
         for cls in classes:
             cls = cls.lower()  # case-insensitive matching
             if cls in WINDOW_ICONS:
+                logging.info('Set %s to icon %s', cls, WINDOW_ICONS[cls])
                 return WINDOW_ICONS[cls]
     logging.info(
         'No icon available for window with classes: %s' % str(classes))
